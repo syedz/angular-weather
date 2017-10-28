@@ -10,10 +10,11 @@ angular.module('root', [
     Common,
     Components
   ])
-  .config(($locationProvider) => {
+  .config(($locationProvider, $urlRouterProvider) => {
     'ngInject';
 
     $locationProvider.html5Mode(true).hashPrefix('!');
+    $urlRouterProvider.otherwise('/forecast');
   })
 
   .component('root', AppComponent);

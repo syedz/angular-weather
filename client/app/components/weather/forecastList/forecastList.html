@@ -1,0 +1,13 @@
+<table>
+  <tbody>
+    <tr>
+      <td ng-repeat="day in $ctrl.fiveDayForecast.list">
+        <div>
+          <p>{{ day.dt_txt }}</p>
+          <p>{{ day.main.temp }}</p>
+          <span></span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
