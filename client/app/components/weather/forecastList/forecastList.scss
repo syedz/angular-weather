@@ -1,53 +1,44 @@
 forecast-list {
   ul {
+    margin-top: 30px;
     list-style: none;
     li {
-      font-size: 15px;
+      font-size: 13px;
       display: block;
       text-align: center;
       clear: both;
+      padding-top: 10px;
+      border-top: 1px solid #AAA;
+      border-bottom: 1px solid #EEE;
+      background-color: #FEFEFE;
       div {
         vertical-align: middle;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
       }
       div.column-date {
         width: 150px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
       div.column-temp {
         width: 150px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
       div.column-high {
         width: 100px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
       div.column-low {
         width: 100px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
       div.column-humidity {
         width: 150px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
       div.column-forecast {
         width: 150px;
-        height: 30px;
-        display: inline-block;
-        text-align: center;
       }
     }
     li.header {
       margin-bottom: 20px;
+      border-bottom: 1px solid #DDD;
       div {
         font-size: 20px;
       }
