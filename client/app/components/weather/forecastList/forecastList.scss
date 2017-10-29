@@ -1,3 +1,56 @@
-.forecastList {
-  color: red;
+forecast-list {
+  ul {
+    list-style: none;
+    li {
+      font-size: 15px;
+      display: block;
+      text-align: center;
+      clear: both;
+      div {
+        vertical-align: middle;
+      }
+      div.column-date {
+        width: 150px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+      div.column-temp {
+        width: 150px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+      div.column-high {
+        width: 100px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+      div.column-low {
+        width: 100px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+      div.column-humidity {
+        width: 150px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+      div.column-forecast {
+        width: 150px;
+        height: 30px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    li.header {
+      margin-bottom: 20px;
+      div {
+        font-size: 20px;
+      }
+    }
+  }
 }

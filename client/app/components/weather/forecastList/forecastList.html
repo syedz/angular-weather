@@ -1,13 +1,13 @@
-<table>
-  <tbody>
-    <tr>
-      <td ng-repeat="day in $ctrl.fiveDayForecast.list">
-        <div>
-          <p>{{ day.dt_txt }}</p>
-          <p>{{ day.main.temp }}</p>
-          <span></span>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<ul class="forecast-table-headers">
+  <li class="header">
+    <div class="column-date"></div>
+    <div class="column-temp">Temperature</div>
+    <div class="column-high">High</div>
+    <div class="column-low">Low</div>
+    <div class="column-humidity">Humidity</div>
+    <div class="column-forecast">Forecast</div>
+  </li>
+  <li ng-repeat="day in $ctrl.fiveDayForecast.list">
+    <forecast weather="day"></forecast>
+  </li>
+</ul>

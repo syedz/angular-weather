@@ -1,0 +1,21 @@
+<div class="column-date">
+  {{ $ctrl.weather.dt * 1000 | date: 'EEE' }}
+  {{ $ctrl.weather.dt * 1000 | date: 'h:mma' }}
+</div>
+<div class="column-temp">
+  {{ $ctrl.weather.main.temp | number: '0' }}&#176;
+</div>
+<div class="column-high bold">
+  {{ $ctrl.weather.main.temp_max | number: '0' }}&#176;
+</div>
+<div class="column-low">
+  {{ $ctrl.weather.main.temp_min | number: '0' }}&#176;
+</div>
+<div class="column-humidity">
+  {{ $ctrl.weather.main.humidity }}%
+</div>
+<div class="column-forecast">
+  <span ng-repeat="forecast in $ctrl.weather.weather">
+    {{ forecast.description }}
+  </span>
+</div>
