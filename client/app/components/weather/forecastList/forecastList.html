@@ -1,13 +1,15 @@
-<ul class="forecast-table-headers">
-  <li class="header">
-    <div class="column-date"></div>
-    <div class="column-temp">Temperature</div>
-    <div class="column-high">High</div>
-    <div class="column-low">Low</div>
-    <div class="column-humidity">Humidity</div>
-    <div class="column-forecast">Forecast</div>
-  </li>
+<ul class="forecast-days">
   <li ng-repeat="day in $ctrl.fiveDayForecast.list">
-    <forecast weather="day"></forecast>
+    <h1 class="label-day text-bold">{{ day.dt * 1000 | date: 'EEE' }}</h1>
+    <span ng-repeat="w in day.weather">
+      <img class="icon-weather" ng-src="http://openweathermap.org/img/w/{{ w.icon }}.png" alt="">
+    </span>
+    <h2 class="label-max text-bold">{{ day.temp.max | number: '0' }}&#176;</h2>
+    <h2 class="label-min">{{ day.temp.min | number: '0'}}&#176;</h2>
+
+    <div class="clear"></div>
+
+    <h2 class="label-humidity">{{ day.humidity }}%</h2>
+    <h2 class="label-wind-speed">{{ day.speed }}m/s</h2>
   </li>
-</ul>
+</ul><!-- /.forecast-days -->

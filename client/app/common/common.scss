@@ -11,11 +11,14 @@ body {
    font: 62.5% 'Arial', sans-serif;
 }
 
-ul, li {
+ul, li, h1, h2 {
   margin: 0;
   padding: 0;
 }
 
-.bold {
+.text-bold {
   font-weight: bolder;
+}
+.clear {
+  clear: both
 }

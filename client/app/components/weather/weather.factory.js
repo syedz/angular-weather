@@ -5,12 +5,12 @@ let WeatherFactory = function($http) {
   this.baseUrl = 'https://api.openweathermap.org/data/2.5/';
 
   let getFiveDayForecast = () => {
-    var url = this.baseUrl + 'forecast?q=Toronto,CA&units=metric&appid=' + this.apiKey;
+    let url = this.baseUrl + 'forecast/daily?q=Toronto,CA&units=metric&appid=' + this.apiKey;
 
     return $http
       .get(url)
       .then(function(res) {
-        // console.log(res);
+        console.log(res.data);
         return res.data;
       });
   };
