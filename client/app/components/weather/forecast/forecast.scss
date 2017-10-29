@@ -1,3 +1,14 @@
 forecast {
-
+  .temperature-table {
+    tr {
+      td {
+        padding: 20px;
+        h1 {
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }

@@ -1,20 +1,22 @@
-<div class="column-date">
-  {{ $ctrl.weather.dt * 1000 | date: 'EEE' }}
-</div>
-<div class="column-temp">
-  {{ $ctrl.weather.main.temp | number: '0' }}&#176;
-</div>
-<div class="column-high text-bold">
-  {{ $ctrl.weather.temp.max | number: '0' }}&#176;
-</div>
-<div class="column-low">
-  {{ $ctrl.weather.temp.min | number: '0' }}&#176;
-</div>
-<div class="column-humidity">
-  {{ $ctrl.weather.humidity }}%
-</div>
-<div class="column-forecast">
-  <span ng-repeat="forecast in $ctrl.weather.weather">
-    <img ng-src="http://openweathermap.org/img/w/{{ forecast.icon }}.png" alt="">
-  </span>
-</div>
+<table class="temperature-table">
+  <tbody>
+    <tr>
+      <td>
+        <h1>Morning</h1>
+        <p>{{ $ctrl.weather.morn | number: '0' }}&#176;</p>
+      </td>
+      <td>
+        <h1>Day</h1>
+        <p>{{ $ctrl.weather.day | number: '0' }}&#176;</p>
+      </td>
+      <td>
+        <h1>Evening</h1>
+        <p>{{ $ctrl.weather.eve | number: '0' }}&#176;</p>
+      </td>
+      <td>
+        <h1>Night</h1>
+        <p>{{ $ctrl.weather.night | number: '0' }}&#176;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
