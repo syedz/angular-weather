@@ -11,25 +11,6 @@ forecast-list {
       border: 1px solid #DDD;
       height: 110px;
       width: 110px;
-      .label-day {
-        font-size: 20px;
-      }
-      .label-max {
-        font-size: 18px;
-      }
-      .label-min {
-        font-size: 16px;
-      }
-      .label-humidity {
-        text-align: center;
-      }
-      .label-wind-speed {
-        text-align: center;
-      }
-      .icon-weather {
-        display: block;
-        float: left;
-      }
     }
   }
 }

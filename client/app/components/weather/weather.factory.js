@@ -10,7 +10,6 @@ let WeatherFactory = function($http) {
     return $http
       .get(url)
       .then(function(res) {
-        console.log(res.data);
         return res.data;
       });
   };

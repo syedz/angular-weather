@@ -1,0 +1,11 @@
+<h1 class="label-day text-bold">{{ $ctrl.day.dt * 1000 | date: 'EEE' }}</h1>
+<span ng-repeat="w in $ctrl.day.weather">
+  <img class="icon-weather" ng-src="http://openweathermap.org/img/w/{{ w.icon }}.png" alt="">
+</span>
+<h2 class="label-max text-bold">{{ $ctrl.day.temp.max | number: '0' }}&#176;</h2>
+<h2 class="label-min">{{ $ctrl.day.temp.min | number: '0'}}&#176;</h2>
+
+<div class="clear"></div>
+
+<h2 class="label-humidity">{{ $ctrl.day.humidity }}%</h2>
+<h2 class="label-wind-speed">{{ $ctrl.day.speed }}m/s</h2>
