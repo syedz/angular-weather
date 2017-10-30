@@ -1,7 +1,8 @@
 class ForecastListController {
-  constructor(WeatherFactory) {
+  constructor($state, WeatherFactory) {
     'ngInject';
 
+    this._$state = $state;
     this._WeatherFactory = WeatherFactory;
   }
 
@@ -17,6 +18,16 @@ class ForecastListController {
           if (res.cod == 200) {
             this.fiveDayForecast = res;
             this.error           = null;
+
+            this._$state.go(
+              'forecast',
+              {
+                degree: this.degree,
+                city: this.city
+              }, {
+                notify: false,
+              }
+            );
 
             return this.fiveDayForecast;
           }
