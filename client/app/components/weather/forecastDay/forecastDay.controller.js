@@ -7,8 +7,6 @@ class ForecastDayController {
     if (changes.day) {
       this.day = Object.assign({}, this.day);
     }
-
-    console.log(this.day);
   };
 }
 

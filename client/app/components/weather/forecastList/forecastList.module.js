@@ -10,10 +10,19 @@ let forecastListModule = angular.module(weatherModule)
 
     $stateProvider
       .state('forecast', {
-        url: '/forecast',
+        url: '/forecast?degree',
         component: 'forecastList',
+        params: {
+          degree: {
+            value: 'C'
+          }
+        },
         resolve: {
-          fiveDayForecast: (WeatherFactory) => WeatherFactory.getFiveDayForecast()
+          fiveDayForecast: (WeatherFactory, $transition$) => {
+            const degree = $transition$.params().degree;
+            return WeatherFactory.getFiveDayForecast(degree);
+          },
+          degree: ($transition$) => $transition$.params().degree
         }
       });
   })

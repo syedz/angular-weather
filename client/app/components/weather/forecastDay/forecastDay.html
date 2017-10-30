@@ -3,28 +3,32 @@
   <span ng-repeat="w in $ctrl.day.weather">
     <img class="icon-weather" ng-src="http://openweathermap.org/img/w/{{ w.icon }}.png" alt="">
   </span>
-  <h2 class="label-max text-bold">{{ $ctrl.day.temp.max | number: '0' }}&#176;</h2>
-  <h2 class="label-min">{{ $ctrl.day.temp.min | number: '0'}}&#176;</h2>
+  <h2 class="label-max text-bold">{{ $ctrl.day.temp.max | number: '0' }}&#176;{{ $ctrl.degree }}</h2>
+  <h2 class="label-min">{{ $ctrl.day.temp.min | number: '0'}}&#176;{{ $ctrl.degree }}</h2>
 
   <div class="clear-both"></div>
 
   <h2 class="label-humidity">{{ $ctrl.day.humidity }}%</h2>
-  <h2 class="label-wind-speed">{{ $ctrl.day.speed }}m/s</h2>
+  <h2 class="label-wind-speed">
+    {{ $ctrl.day.speed }}
+    <span ng-show="$ctrl.degree == 'C'">m/s</span>
+    <span ng-show="$ctrl.degree == 'F'">mph</span>
+  </h2>
 </div><!-- /.forecast-day-details -->
 
 <div class="forecast-day-temps">
   <h1>Morning</h1>
-  <p>{{ $ctrl.day.temp.morn | number: '0' }}&#176;</p>
+  <p>{{ $ctrl.day.temp.morn | number: '0' }}&#176;{{ $ctrl.degree }}</p>
 </div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Day</h1>
-  <p>{{ $ctrl.day.temp.day | number: '0' }}&#176;</p>
+  <p>{{ $ctrl.day.temp.day | number: '0' }}&#176;{{ $ctrl.degree }}</p>
 </div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Evening</h1>
-  <p>{{ $ctrl.day.temp.eve | number: '0' }}&#176;</p>
+  <p>{{ $ctrl.day.temp.eve | number: '0' }}&#176;{{ $ctrl.degree }}</p>
 </div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Night</h1>
-  <p>{{ $ctrl.day.temp.night | number: '0' }}&#176;</p>
+  <p>{{ $ctrl.day.temp.night | number: '0' }}&#176;{{ $ctrl.degree }}</p>
 </div><!-- /.forecast-day-temps -->

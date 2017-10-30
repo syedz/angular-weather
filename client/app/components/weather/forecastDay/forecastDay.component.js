@@ -4,7 +4,8 @@ import './forecastDay.scss';
 
 let forecastDayComponent = {
   bindings: {
-    day: '<'
+    day: '<',
+    degree: '@'
   },
   template,
   controller

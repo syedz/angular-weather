@@ -14,7 +14,7 @@ angular.module('root', [
     'ngInject';
 
     $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise('/forecast');
+    $urlRouterProvider.otherwise('/forecast?degree=C');
   })
   .constant('CONFIG', {
     apiKey: '8caa3a62ba1f3b52d931888f38d1bc75',

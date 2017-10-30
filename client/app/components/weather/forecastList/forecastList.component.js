@@ -5,7 +5,8 @@ import './forecastList.scss';
 let forecastListComponent = {
   restrict: 'E',
   bindings: {
-    fiveDayForecast: '<'
+    fiveDayForecast: '<',
+    degree: '@'
   },
   template,
   controller

@@ -1,6 +1,6 @@
 class ForecastListController {
   constructor() {
-    this.name = 'forecastList';
+
   }
 }
 

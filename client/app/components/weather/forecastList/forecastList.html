@@ -1,5 +1,16 @@
+<a
+  ui-sref="forecast({ degree: 'C' })"
+  class="button-degree">
+  &#8451;
+</a>
+<a
+  ui-sref="forecast({ degree: 'F' })"
+  class="button-degree">
+  &#8457;
+</a>
+
 <ul class="forecast-days">
   <li ng-repeat="day in $ctrl.fiveDayForecast.list">
-    <forecast-day day="day"></forecast-day>
+    <forecast-day day="day" degree="{{ $ctrl.degree }}"></forecast-day>
   </li>
 </ul><!-- /.forecast-days -->
