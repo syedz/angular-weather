@@ -10,19 +10,19 @@ let forecastListModule = angular.module(weatherModule)
 
     $stateProvider
       .state('forecast', {
-        url: '/forecast?degree',
+        url: '/forecast?degree&city',
         component: 'forecastList',
         params: {
           degree: {
             value: 'C'
+          },
+          city: {
+            value: 'Toronto, CA'
           }
         },
         resolve: {
-          fiveDayForecast: (WeatherFactory, $transition$) => {
-            const degree = $transition$.params().degree;
-            return WeatherFactory.getFiveDayForecast(degree);
-          },
-          degree: ($transition$) => $transition$.params().degree
+          degree: ($transition$) => $transition$.params().degree,
+          city: ($transition$) => $transition$.params().city
         }
       });
   })

@@ -1,15 +1,31 @@
 <a
-  ui-sref="forecast({ degree: 'C' })"
+  ui-sref="forecast({ degree: 'C', city: $ctrl.city })"
   ui-sref-active-eq="active"
   class="button-degree">
   &#8451;
 </a>
 <a
-  ui-sref="forecast({ degree: 'F' })"
+  ui-sref="forecast({ degree: 'F', city: $ctrl.city })"
   ui-sref-active-eq="active"
   class="button-degree">
   &#8457;
 </a>
+
+<input
+  type="text"
+  name="city"
+  ng-change="$ctrl.updateCity();"
+  ng-model-options="{
+    'updateOn': 'default blur',
+    'debounce': {
+      'default': 500,
+      'blur': 0
+    }
+  }"
+  ng-model="$ctrl.city">
+<span ng-if="$ctrl.error">{{ $ctrl.error }}</span>
+
+<h1>{{ $ctrl.fiveDayForecast.city.name }}, {{ $ctrl.fiveDayForecast.city.country }}</h1>
 
 <ul class="forecast-days">
   <li ng-repeat="day in $ctrl.fiveDayForecast.list">

@@ -1,9 +1,9 @@
 let WeatherFactory = function(CONFIG, $http) {
   'ngInject';
 
-  let getFiveDayForecast = (degree) => {
+  let getFiveDayForecast = (degree, city) => {
     let units = degree == 'F' ? 'imperial' : 'metric';
-    let url = `${CONFIG.openWeatherBaseUrl}forecast/daily?q=Toronto,CA&units=${units}&appid=${CONFIG.apiKey}`;
+    let url = `${CONFIG.openWeatherBaseUrl}forecast/daily?q=${city}&units=${units}&appid=${CONFIG.apiKey}`;
 
     return $http
       .get(url)
