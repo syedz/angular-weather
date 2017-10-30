@@ -10,20 +10,21 @@
 
   <h2 class="label-humidity">{{ $ctrl.day.humidity }}%</h2>
   <h2 class="label-wind-speed">{{ $ctrl.day.speed }}m/s</h2>
-</div>
+</div><!-- /.forecast-day-details -->
+
 <div class="forecast-day-temps">
   <h1>Morning</h1>
   <p>{{ $ctrl.day.temp.morn | number: '0' }}&#176;</p>
-</div>
+</div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Day</h1>
   <p>{{ $ctrl.day.temp.day | number: '0' }}&#176;</p>
-</div>
+</div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Evening</h1>
   <p>{{ $ctrl.day.temp.eve | number: '0' }}&#176;</p>
-</div>
+</div><!-- /.forecast-day-temps -->
 <div class="forecast-day-temps">
   <h1>Night</h1>
   <p>{{ $ctrl.day.temp.night | number: '0' }}&#176;</p>
-</div>
+</div><!-- /.forecast-day-temps -->
