@@ -1,11 +1,8 @@
-let WeatherFactory = function($http) {
+let WeatherFactory = function(RESOURCE_CONFIG, $http) {
   'ngInject';
 
-  this.apiKey = '8caa3a62ba1f3b52d931888f38d1bc75';
-  this.baseUrl = 'https://api.openweathermap.org/data/2.5/';
-
   let getFiveDayForecast = () => {
-    let url = `${this.baseUrl}forecast/daily?q=Toronto,CA&units=metric&appid=${this.apiKey}`;
+    let url = `${RESOURCE_CONFIG.openWeatherBaseUrl}forecast/daily?q=Toronto,CA&units=metric&appid=${RESOURCE_CONFIG.apiKey}`;
 
     return $http
       .get(url)
