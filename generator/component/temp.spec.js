@@ -1,4 +1,4 @@
-import <%= upCaseName %>Module from './<%= name %>';
+import <%= upCaseName %>Module from './<%= name %>.module';
 import <%= upCaseName %>Controller from './<%= name %>.controller';
 import <%= upCaseName %>Component from './<%= name %>.component';
 import <%= upCaseName %>Template from './<%= name %>.html';

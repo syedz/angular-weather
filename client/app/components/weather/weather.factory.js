@@ -5,7 +5,7 @@ let WeatherFactory = function($http) {
   this.baseUrl = 'https://api.openweathermap.org/data/2.5/';
 
   let getFiveDayForecast = () => {
-    let url = this.baseUrl + 'forecast/daily?q=Toronto,CA&units=metric&appid=' + this.apiKey;
+    let url = `${this.baseUrl}forecast/daily?q=Toronto,CA&units=metric&appid=${this.apiKey}`;
 
     return $http
       .get(url)

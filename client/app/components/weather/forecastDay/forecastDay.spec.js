@@ -1,4 +1,4 @@
-import ForecastDayModule from './forecastDay';
+import ForecastDayModule from './forecastDay.module';
 import ForecastDayController from './forecastDay.controller';
 import ForecastDayComponent from './forecastDay.component';
 import ForecastDayTemplate from './forecastDay.html';

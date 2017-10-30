@@ -1,15 +1,15 @@
 forecast-list {
   ul.forecast-days {
-    li:hover {
+    > li:hover {
       background-color: #EFEFEF;
       cursor: pointer;
     }
-    li {
+    > li {
       display: inline-block;
       padding: 10px;
       margin: 2px;
       border: 1px solid #DDD;
-      height: 110px;
+      // height: 110px;
       width: 110px;
     }
   }

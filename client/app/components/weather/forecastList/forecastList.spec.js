@@ -1,4 +1,4 @@
-import ForecastListModule from './forecastList';
+import ForecastListModule from './forecastList.module';
 import ForecastListController from './forecastList.controller';
 import ForecastListComponent from './forecastList.component';
 import ForecastListTemplate from './forecastList.html';

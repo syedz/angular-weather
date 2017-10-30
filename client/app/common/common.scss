@@ -11,7 +11,7 @@ body {
    font: 62.5% 'Arial', sans-serif;
 }
 
-ul, li, h1, h2 {
+ul, li, h1, h2, p {
   margin: 0;
   padding: 0;
 }
@@ -19,6 +19,6 @@ ul, li, h1, h2 {
 .text-bold {
   font-weight: bolder;
 }
-.clear {
+.clear-both {
   clear: both
 }
