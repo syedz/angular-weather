@@ -16,7 +16,7 @@ angular.module('root', [
     $locationProvider.html5Mode(true).hashPrefix('!');
     $urlRouterProvider.otherwise('/forecast');
   })
-  .constant('RESOURCE_CONFIG', {
+  .constant('CONFIG', {
     apiKey: '8caa3a62ba1f3b52d931888f38d1bc75',
     openWeatherBaseUrl: 'https://api.openweathermap.org/data/2.5/'
   })
