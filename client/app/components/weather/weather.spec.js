@@ -6,6 +6,8 @@ let weatherService,
     _$rootScope,
     _$httpBackend,
     _$q,
+    mockDegree,
+    mockCity,
     mockFiveDayForecastResponse;
 
 describe('WeatherFactory', () => {
@@ -23,6 +25,8 @@ describe('WeatherFactory', () => {
   });
 
   beforeEach(inject(($injector) => {
+    mockDegree = 'C',
+    mockCity = 'Toronto, CA'
     mockFiveDayForecastResponse = {
        "city":{
           "id":6167865,
@@ -63,7 +67,7 @@ describe('WeatherFactory', () => {
              "clouds":48
           }
        ]
-    }
+    };
 
     _$q            = $injector.get('$q');
     _$httpBackend  = $injector.get('$httpBackend');
@@ -73,15 +77,12 @@ describe('WeatherFactory', () => {
     deferred = _$q.defer();
   }));
 
-  beforeEach(() => {
+  it('should get the weather response', (done) => {
     spyOn(weatherService, 'getFiveDayForecast').and.returnValue(deferred.promise);
-  });
-
-  it('should get the weather', (done) => {
     deferred.resolve(mockFiveDayForecastResponse);
 
     weatherService
-      .getFiveDayForecast()
+      .getFiveDayForecast(mockDegree, mockCity)
       .then((res) => {
         if (res.cod == 200) { done(); }
       });
