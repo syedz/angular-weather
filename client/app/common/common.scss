@@ -22,3 +22,19 @@ ul, li, h1, h2, p {
 .clear-both {
   clear: both
 }
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 15px;
+}
+button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 0;
+}
