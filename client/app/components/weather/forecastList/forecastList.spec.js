@@ -1,3 +1,4 @@
+import WeatherModule from '../weather.module'
 import WeatherFactory from '../weather.factory';
 
 import ForecastListModule from './forecastList.module'
@@ -16,7 +17,7 @@ let mockFiveDayForecastResponse,
     _$q;
 
 describe('ForecastList', () => {
-  beforeEach(angular.mock.module(ForecastListModule));
+  beforeEach(angular.mock.module(WeatherModule));
 
   beforeEach(() => {
     angular.mock.module({
