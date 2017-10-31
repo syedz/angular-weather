@@ -34,7 +34,9 @@ class ForecastListController {
         },
         (err) => {
           console.log(err);
-          this.error = err.data.message;
+          this.error           = err.data.message;
+          this.fiveDayForecast = null;
+
           return this.error;
         }
       );
