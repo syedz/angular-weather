@@ -1,32 +1,7 @@
 # Angular Weather
 
-## File Structure
-We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using
-Angular's new router) as well as a great way to ensure a tasteful transition to Angular 2, when the time is ripe.
-Everything--or mostly everything, as we'll explore (below)--is a component. A component is a self-contained
-concern--may it be a feature or strictly-defined, ever-present element of the UI (such as a header, sidebar, or
-footer). Also characteristic of a component is that it harnesses its own stylesheets, templates, controllers, routes,
-services, and specs. This encapsulation allows us the comfort of isolation and structural locality. Here's how it
-looks:
-```
-client
-⋅⋅app/
-⋅⋅⋅⋅root.module.js * app entry file
-⋅⋅⋅⋅root.html * app template
-⋅⋅⋅⋅common/ * functionality pertinent to several components propagate into this directory
-⋅⋅⋅⋅components/ * where components live
-⋅⋅⋅⋅⋅⋅components.js * components entry file
-⋅⋅⋅⋅⋅⋅home/ * home component
-⋅⋅⋅⋅⋅⋅⋅⋅home.js * home entry file (routes, configurations, and declarations occur here)
-⋅⋅⋅⋅⋅⋅⋅⋅home.component.js * home "directive"
-⋅⋅⋅⋅⋅⋅⋅⋅home.controller.js * home controller
-⋅⋅⋅⋅⋅⋅⋅⋅home.scss * home styles
-⋅⋅⋅⋅⋅⋅⋅⋅home.html * home template
-⋅⋅⋅⋅⋅⋅⋅⋅home.spec.js * home specs (for entry, component, and controller)
-```
-
 ## Testing Setup
-All tests are also written in ES6. We use Webpack to take care of the logistics of getting those files to run in the various browsers, just like with our client files. This is our testing stack:
+All tests are also written in ES6. Webpack is used to take care of the logistics of getting those files to run in the various browsers, just like with our client files. This is our testing stack:
 * Karma
 * Webpack + Babel
 * Mocha
@@ -40,12 +15,10 @@ Tools needed to run this app:
 * `node` and `npm`
 
 ## Installing
-* `fork` this repo
-* `clone` your fork
 * `npm install` to install dependencies
 
 ## Running the App
-NG6 uses Gulp to build and launch the development environment. After you have installed all dependencies, you may run the root. Running `npm start` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
+Gulp is used to build and launch the development environment. After you have installed all dependencies, you may run the root. Running `npm start` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
 
 ### Tasks
 Here's a list of available tasks:
