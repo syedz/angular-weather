@@ -1,32 +1,31 @@
 forecast-list {
+  .city-search-form {
+    float: left;
+  }
+  .degree-container {
+    float: right;
+  }
   a.button-degree {
     font-size: 20px;
     display: inline-block;
     margin: 10px 5px;
     padding: 5px;
-    border: 1px solid #DDD;
-    background-color: #EEE;
-    color: #111;
     text-decoration: none;
-    &.active {
-      background-color: #000;
-      color: #FFF;
-    }
   }
-  a.button-degree:hover {
-    background-color: #BBB;
-    color: #FFF;
+  h1.city-name {
+    text-align: center;
+    margin: 10px;
   }
   ul.forecast-days {
-    > li:hover {
-      background-color: #EFEFEF;
-    }
     > li {
       display: inline-block;
       padding: 10px;
       margin: 2px;
-      border: 1px solid #DDD;
+      border: 1px solid #BBB;
       width: 110px;
+    }
+    > li:hover {
+      background-color: #EFEFEF;
     }
   }
 }

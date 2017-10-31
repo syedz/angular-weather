@@ -9,6 +9,7 @@ $darkTextColor:  #212121;
 body {
   height: 100%;
   font: 62.5% 'Arial', sans-serif;
+  background: url('http://s3-us-west-1.amazonaws.com/s3.fm949sd.com/s3fs-public/Blogs/dreamstime_s_20062208.jpg') repeat 0 0;
 }
 
 ul, li, h1, h2, p {
@@ -27,7 +28,8 @@ input[type="text"] {
   padding: 10px;
   font-size: 15px;
 }
-button {
+button, .link-button {
+  display: block;
   background-color: #008CBA;
   border: none;
   color: white;
@@ -37,4 +39,13 @@ button {
   display: inline-block;
   font-size: 14px;
   border-radius: 0;
+}
+button:hover, .link-button:hover {
+  background-color: #056483;
+}
+button:active, .link-button:active {
+  background-color: #022f3d;
+}
+.link-button.active {
+  background-color: #022f3d;
 }

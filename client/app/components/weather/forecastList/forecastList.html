@@ -1,32 +1,43 @@
-<form name="citySearch">
-  <input
-    class="input-search"
-    type="text"
-    placeholder="Enter a city"
-    name="city"
-    ng-model="$ctrl.city">
-  <button
-    ng-click="$ctrl.updateCity();">
-    Search City
-  </button>
-</form>
+<div class="city-search-form">
+  <form name="citySearch">
+    <input
+      class="input-search"
+      type="text"
+      placeholder="Enter a city"
+      name="city"
+      ng-model="$ctrl.city">
+    <button
+      ng-click="$ctrl.updateCity();">
+      Search City
+    </button>
+    <span ng-if="$ctrl.error">{{ $ctrl.error }}</span>
+  </form>
+</div><!-- /.city-search-form -->
 
-<a
-  ui-sref="forecast({ degree: 'C', city: $ctrl.city })"
-  ui-sref-active-eq="active"
-  class="button-degree">
-  &#8451;
-</a>
-<a
-  ui-sref="forecast({ degree: 'F', city: $ctrl.city })"
-  ui-sref-active-eq="active"
-  class="button-degree">
-  &#8457;
-</a>
+<div class="degree-container">
+  <a
+    ui-sref="forecast({ degree: 'C', city: $ctrl.city })"
+    ui-sref-active-eq="active"
+    class="link-button button-degree">
+    &#8451;
+  </a>
+  <a
+    ui-sref="forecast({ degree: 'F', city: $ctrl.city })"
+    ui-sref-active-eq="active"
+    class="link-button button-degree">
+    &#8457;
+  </a>
+</div><!-- /.degree-container -->
 
-<span ng-if="$ctrl.error">{{ $ctrl.error }}</span>
+<div class="clear-both"></div>
 
-<h1>{{ $ctrl.fiveDayForecast.city.name }}, {{ $ctrl.fiveDayForecast.city.country }}</h1>
+<h1 class="city-name" ng-if="$ctrl.fiveDayForecast.city">
+  {{ $ctrl.fiveDayForecast.city.name }}, {{ $ctrl.fiveDayForecast.city.country }}
+</h1>
+
+<h1 class="city-name" ng-if="$ctrl.error">
+  Please enter a valid city name
+</h1>
 
 <ul class="forecast-days">
   <li ng-repeat="day in $ctrl.fiveDayForecast.list">
