@@ -10,11 +10,10 @@ angular.module('root', [
     Common,
     Components
   ])
-  .config(($locationProvider, $urlRouterProvider) => {
+  .config(($locationProvider) => {
     'ngInject';
 
     $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise('/forecast?degree=C&city=Toronto');
   })
   .constant('CONFIG', {
     apiKey: '8caa3a62ba1f3b52d931888f38d1bc75',

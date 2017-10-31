@@ -1,3 +1,4 @@
+import uiRouter from '@uirouter/angularjs';
 import WeatherModule from '../weather.module'
 import WeatherFactory from '../weather.factory';
 
@@ -12,12 +13,13 @@ let mockFiveDayForecastResponse,
     weatherFactory,
     deferred,
     _$location,
-    _$rootScope,
     _$state,
+    _$rootScope,
     _$q;
 
 describe('ForecastList', () => {
   beforeEach(angular.mock.module(WeatherModule));
+  beforeEach(angular.mock.module(uiRouter));
 
   beforeEach(() => {
     angular.mock.module({
@@ -40,9 +42,9 @@ describe('ForecastList', () => {
 
   beforeEach(inject(($injector) => {
     _$state        = $injector.get('$state');
+    _$rootScope    = $injector.get('$rootScope');
     _$q            = $injector.get('$q');
     _$location     = $injector.get('$location');
-    _$rootScope    = $injector.get('$rootScope').$new();
     weatherFactory = $injector.get('WeatherFactory');
 
     mockDegree = 'C',
@@ -92,10 +94,22 @@ describe('ForecastList', () => {
   }));
 
   describe('Module', () => {
-    xit('default component should be forecastList', () => {
+    var state;
+
+    it('should have the correct URL', () => {
+      _$location.url('/forecast?degree&city');
+      _$rootScope.$digest();
+
+      expect(_$state.current.name).toEqual('forecast');
+      expect(_$state.current.component).toEqual('forecastList');
+    });
+
+    it('should load default URL', () => {
       _$location.url('/');
       _$rootScope.$digest();
-      console.log(_$state.current);
+
+      expect(_$state.current.url).toEqual('/forecast?degree&city');
+      expect(_$state.current.name).toEqual('forecast');
       expect(_$state.current.component).toEqual('forecastList');
     });
   });

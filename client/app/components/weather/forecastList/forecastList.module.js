@@ -1,11 +1,10 @@
 import angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
 
 import weatherModule from '../weather.module';
 import forecastListComponent from './forecastList.component';
 
 let forecastListModule = angular.module(weatherModule)
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
 
     $stateProvider
@@ -25,6 +24,8 @@ let forecastListModule = angular.module(weatherModule)
           city: ($transition$) => $transition$.params().city
         }
       });
+
+    $urlRouterProvider.otherwise('/forecast?degree=C&city=Toronto');
   })
   .component('forecastList', forecastListComponent)
   .name;
